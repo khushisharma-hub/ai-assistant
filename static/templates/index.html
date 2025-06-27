@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 AI Assistant</h1>
+        <form method="POST">
+            <label for="function">Choose a function:</label>
+            <select name="function">
+                <option value="question">Answer Questions</option>
+                <option value="summary">Summarize Text</option>
+                <option value="creative">Generate Creative Content</option>
+            </select><br><br>
+            <textarea name="user_input" placeholder="Type your query here..." required></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2>Response:</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
 
